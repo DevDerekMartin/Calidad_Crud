@@ -1,0 +1,37 @@
+<app-menu></app-menu>
+<div class="container">
+  <div class="table-container">
+    <h2>Tabla de Datos</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>Imagen</th>
+          <th>Fecha de Nacimiento</th>
+          <th>Comentario</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let persona of personas">
+          <td>{{ persona.nombre }}</td>
+          <td>{{ persona.email }}</td>
+          <td>{{ persona.telefono }}</td>
+          <td><img [src]="persona.imagen" alt="Avatar" class="avatar"></td>
+          <td>{{ persona.fecha_nacimiento }}</td>
+          <td>{{ persona.comentario }}</td>
+          <td>
+            <div class="btn-group" role="group" aria-label="Acciones">
+              <button type="button" class="btn btn-primary btn-sm">
+                <a [routerLink]="['/editar', persona.id]" class="text-white text-decoration-none">Editar</a>
+              </button>
+              <button type="button" class="btn btn-danger btn-sm" (click)="eliminarPersona(persona.id)">Eliminar</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

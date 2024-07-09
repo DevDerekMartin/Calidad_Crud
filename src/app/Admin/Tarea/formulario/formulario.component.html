@@ -1,0 +1,58 @@
+<app-menu></app-menu>
+
+<div class="container">
+  <form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" formControlName="nombre">
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email">
+    </div>
+    <div>
+      <label for="telefono">Teléfono</label>
+      <input type="text" id="telefono" formControlName="telefono">
+    </div>
+    <div>
+      <label for="imagen">Imagen</label>
+      <input type="file" id="imagen" formControlName="imagen">
+    </div>
+    <div>
+      <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+      <input type="date" id="fecha_nacimiento" formControlName="fecha_nacimiento">
+    </div>
+    <div>
+      <label for="comentario">Comentario</label>
+      <textarea id="comentario" formControlName="comentario"></textarea>
+    </div>
+    <button type="submit" [disabled]="usuarioForm.invalid">Guardar</button>
+  </form>
+  
+</div>
+
+<h2>Lista de Personas</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Teléfono</th>
+      <th>Imagen</th>
+      <th>Fecha de Nacimiento</th>
+      <th>Comentario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let persona of personas">
+      <td>{{ persona.id }}</td>
+      <td>{{ persona.nombre }}</td>
+      <td>{{ persona.email }}</td>
+      <td>{{ persona.telefono }}</td>
+      <td>{{ persona.imagen }}</td>
+      <td>{{ persona.fecha_nacimiento }}</td>
+      <td>{{ persona.comentario }}</td>
+    </tr>
+  </tbody>
+</table>

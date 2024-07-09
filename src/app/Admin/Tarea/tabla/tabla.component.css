@@ -1,0 +1,29 @@
+/* Estilos CSS para los botones */
+.btn {
+    margin-right: 5px; /* Espacio entre los botones */
+    margin-bottom: 5px; /* Espacio debajo de los botones */
+}
+
+/* Estilos específicos para los botones pequeños */
+.btn-sm {
+    font-size: 14px;
+    padding: 10px;
+    width: 80%;
+}
+
+/* Estilos para las celdas de la tabla */
+th, td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+/* Estilo para la fila de la tabla cuando se pasa el mouse */
+tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* Estilos adicionales si es necesario */
+.table-container {
+    margin-top: 20px;
+}
